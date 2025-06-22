@@ -26,7 +26,7 @@ Relic of Lies provides a Web3 card game where:
    - 2-6 player matches
    - Best-of-N round system (3 points to win)
    - Turn-based elimination gameplay
-   - 9 unique cards with special effects
+   - 10 unique cards with special effects
    - Real-time game state synchronization
 
 2. Staking System
@@ -35,13 +35,7 @@ Relic of Lies provides a Web3 card game where:
    - Transparent pot management
    - Fair distribution via smart contracts
 
-3. Anti-Cheat System
-   - Commit-reveal mechanism
-   - Off-chain deck management
-   - On-chain verification
-   - Salt-based card validation
-
-4. Real-time Experience
+3. Real-time Experience
    - WebSocket-based communication
    - Live game state updates
    - Player turn indicators
