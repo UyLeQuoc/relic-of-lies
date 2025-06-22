@@ -1,0 +1,6 @@
+
+mutation RefreshMatches($postId: ID!) {
+  refreshMatches(postId: $postId) {
+    id
+  }
+}

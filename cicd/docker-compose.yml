@@ -1,0 +1,52 @@
+services:
+  # api:
+  #   build:
+  #     context: ./apps/api
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - NODE_ENV=production
+  #   restart: unless-stopped
+
+  # web:
+  #   build:
+  #     context: ./apps/web
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NEXT_PUBLIC_API_URL=http://api:5000
+  #     - NEXT_PUBLIC_IO_URL=http://api:5000
+  #   depends_on:
+  #     - api
+  #   restart: unless-stopped 
+  relic-of-lies-db:
+    container_name: relic-of-lies-db
+    image: postgres:13.5
+    restart: always
+    environment:
+      - POSTGRES_DB=relic-of-lies_db
+      - POSTGRES_USER=relic-of-lies_user
+      - POSTGRES_PASSWORD=relic-of-lies_password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  redis:
+    container_name: relic-of-lies-redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - '6379:6379'
+
+  redisinsight:
+    container_name: relic-of-lies-redisinsight
+    image: redis/redisinsight:latest
+    restart: always
+    ports:
+      - '6380:5540'
+
+volumes:
+  postgres:

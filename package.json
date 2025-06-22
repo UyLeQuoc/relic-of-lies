@@ -1,0 +1,40 @@
+{
+  "name": "relic-of-lies",
+  "version": "1.0.0",
+  "description": "Using NextJs 15 and NestJS with Graphql, Postgres and Shadcn. With CI CD",
+  "keywords": [
+    "relic-of-lies",
+    "nextjs15",
+    "nestjs"
+  ],
+  "homepage": "https://github.com/UyLeQuoc/relic-of-lies#readme",
+  "bugs": {
+    "url": "https://github.com/UyLeQuoc/relic-of-lies/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UyLeQuoc/relic-of-lies.git"
+  },
+  "license": "ISC",
+  "author": "UyDev",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "setup": "npm install -f && cd apps/api && npm install -f && cd ../.. && cd apps/web && npm install -f",
+    "dev:api": "cd apps/api && npm run start:dev",
+    "dev:web": "cd apps/web && npm run dev",
+    "gen": "cd apps/web && npm run gen",
+    "generate": "cd apps/api && npm run generate",
+    "migrate": "cd apps/api && npm run migrate",
+    "seed": "cd apps/api && npm run seed",
+    "reset": "cd apps/api && npm run reset",
+    "format": "cd apps/api && npm run lint",
+    "studio": "cd apps/api && npm run studio"
+  },
+  "dependencies": {
+    "@graphql-codegen/typescript-react-apollo": "^4.3.3",
+    "concurrently": "^9.1.2"
+  }
+}

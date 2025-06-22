@@ -1,0 +1,91 @@
+mutation LoginWithWallet($input: LoginInput!) {
+  loginWithWallet(input: $input) {
+    user {
+      avatarUrl
+      bio
+      createdAt
+      id
+      name
+      role
+      updatedAt
+      wallet
+    }
+    refreshToken
+    accessToken
+  }
+}
+
+query GetCurrentUser {
+  getCurrentUser {
+    id
+    wallet
+    name
+    avatarUrl
+    bio
+    role
+    createdAt
+    updatedAt
+    dealsAsA {
+      id
+      status
+      type
+      createdAt
+      completedAt
+      userA {
+        id
+        wallet
+        name
+        avatarUrl
+      }
+      userB {
+        id
+        wallet
+        name
+        avatarUrl
+      }
+      postA {
+        id
+        haveSkill
+        wantSkill
+        description
+      }
+      postB {
+        id
+        haveSkill
+        wantSkill
+        description
+      }
+    }
+    dealsAsB {
+      id
+      status
+      type
+      createdAt
+      completedAt
+      userA {
+        id
+        wallet
+        name
+        avatarUrl
+      }
+      userB {
+        id
+        wallet
+        name
+        avatarUrl
+      }
+      postA {
+        id
+        haveSkill
+        wantSkill
+        description
+      }
+      postB {
+        id
+        haveSkill
+        wantSkill
+        description
+      }
+    }
+  }
+}
