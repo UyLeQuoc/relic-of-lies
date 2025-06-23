@@ -4,10 +4,10 @@ import React, { useEffect } from 'react'
 import { Logo } from './logo'
 import { ConnectButton } from '@mysten/dapp-kit'
 import { ModeToggle } from './toggle-theme'
-import { ScrollProgress } from '../magicui/scroll-progress'
 import { useCurrentWallet } from '@mysten/dapp-kit'
 import { useLoginWithWalletMutation, useGetCurrentUserQuery } from '@/graphql/generated/graphql'
 import Link from 'next/link'
+import { ScrollProgress } from '@/components/magicui/scroll-progress'
 export const Header = () => {
   const { currentWallet, isConnected } = useCurrentWallet()
   const [loginWithWallet, { loading }] = useLoginWithWalletMutation()

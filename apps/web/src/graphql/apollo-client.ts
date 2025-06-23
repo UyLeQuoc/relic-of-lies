@@ -6,7 +6,7 @@ import {
   import { setContext } from '@apollo/client/link/context';
   import { HttpLink } from '@apollo/client/link/http';
   
-import { envConfig } from '@/constants/envConfig';
+import { envConfig } from '@/constants';
   
   const authLink = setContext((_, { headers }) => {
     const accessToken = localStorage.getItem('token')
