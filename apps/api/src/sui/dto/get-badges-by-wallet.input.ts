@@ -6,5 +6,5 @@ export class GetBadgesByWalletInput {
     @Field(() => String)
     @IsNotEmpty()
     @IsString()
-    wallet: string
+        wallet: string
 } 

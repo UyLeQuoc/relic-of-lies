@@ -2,186 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type ActiveDealsResponse {
-  dealsAsA: [Deal!]
-  dealsAsB: [Deal!]
-}
-
-input CreateDealInput {
-  postAId: String!
-  postBId: String
-  userBId: String!
-}
-
-input CreatePostInput {
-  description: String
-  haveSkill: String!
-  tags: [CreateTagInput!]
-  type: PostType!
-  wantSkill: String!
-}
-
-input CreateTagInput {
-  name: String!
-}
-
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
 scalar DateTime
 
-type Deal {
-  completedAt: DateTime
-  createdAt: DateTime!
-  id: String!
-  postA: Post
-  postAId: String
-  postB: Post
-  postBId: String
-  reviews: [Review!]
-  status: DealStatus!
-  type: DealType!
-  userA: User
-  userAId: String!
-  userB: User
-  userBId: String!
-}
-
-"""The status of the deal"""
-enum DealStatus {
-  AGREED
-  CANCELLED
-  COMPLETED
-  PENDING
-}
-
-"""The type of the deal"""
-enum DealType {
-  ITEM_SWAP
-  SKILL_SWAP
-}
-
-type DealsResponse {
-  dealsAsA: [Deal!]
-  dealsAsB: [Deal!]
-}
-
 input GetBadgesByWalletInput {
   wallet: String!
 }
 
-input LoginInput {
-  message: String!
-  signature: String!
-  wallet: String!
-}
-
-type LoginResponse {
-  accessToken: String!
-  refreshToken: String!
-  user: User!
-}
-
-enum MatchMethod {
-  EMBEDDING
-  EXACT
-  GPT
-  PARTIAL
-  TAG
-}
-
-type MatchingSuggestion {
-  createdAt: DateTime!
-  id: String!
-  method: MatchMethod!
-  score: Float
-  sourcePost: Post!
-  sourcePostId: String!
-  targetPost: Post!
-  targetPostId: String!
-}
-
 type Mutation {
-  acceptDeal(dealId: String!): Deal!
-  cancelDeal(dealId: String!): Deal!
-  completeDeal(dealId: String!): Deal!
-  createDeal(input: CreateDealInput!): Deal!
-  createPost(input: CreatePostInput!): Post!
-  createTag(input: CreateTagInput!): PostTag!
-  loginWithWallet(input: LoginInput!): LoginResponse!
   mintSkillBadge(recipient: String!, skillName: String!): String!
-  refreshMatches(postId: ID!): Post!
-  refreshTokens(input: RefreshTokenInput!): LoginResponse!
-  rejectDeal(dealId: String!): Deal!
-  removePost(id: ID!): Post!
-  updateAvatar(avatarUrl: String!): User!
-  updatePost(input: UpdatePostInput!): Post!
-}
-
-type Post {
-  createdAt: DateTime!
-  dealsAsPostA: [Deal!]
-  dealsAsPostB: [Deal!]
-  description: String
-  haveSkill: String!
-  id: ID!
-  matchAsSource: [MatchingSuggestion!]
-  matchAsTarget: [MatchingSuggestion!]
-  status: PostStatus!
-  tags: [PostTag!]
-  type: PostType!
-  user: User
-  userId: String!
-  wantSkill: String!
-}
-
-"""The status of the post"""
-enum PostStatus {
-  ACTIVE
-  INACTIVE
-  MATCHED
-}
-
-type PostTag {
-  id: ID!
-  name: String!
-}
-
-"""The type of the post"""
-enum PostType {
-  ITEM
-  SKILL
 }
 
 type Query {
-  deal(dealId: String!): Deal!
-  getActiveDeals(wallet: String!): ActiveDealsResponse!
   getBadgesByWallet(input: GetBadgesByWalletInput!): [SkillBadgeDto!]!
-  getCurrentUser: User!
-  getDealsByWallet(wallet: String!): DealsResponse!
   hello: String!
-  myPosts: [Post!]!
-  post(id: ID!): Post!
-  posts: [Post!]!
-  postsByWallet(wallet: String!): [Post!]!
-  userByWallet(wallet: String!): User!
-}
-
-input RefreshTokenInput {
-  refreshToken: String!
-}
-
-type Review {
-  comment: String
-  createdAt: DateTime!
-  deal: Deal
-  dealId: String!
-  id: String!
-  rating: Float!
-  reviewee: User
-  revieweeId: String!
-  reviewer: User
-  reviewerId: String!
 }
 
 type SkillBadgeDto {
@@ -191,28 +27,4 @@ type SkillBadgeDto {
   suiObjectId: String!
   userId: String!
   verifierId: String!
-}
-
-input UpdatePostInput {
-  description: String
-  haveSkill: String
-  id: ID!
-  status: PostStatus
-  tags: [CreateTagInput!]
-  type: PostType
-  wantSkill: String
-}
-
-type User {
-  avatarUrl: String
-  bio: String
-  createdAt: DateTime!
-  dealsAsA: [Deal!]
-  dealsAsB: [Deal!]
-  id: ID!
-  name: String
-  posts: [Post!]
-  role: String!
-  updatedAt: DateTime!
-  wallet: String!
 }

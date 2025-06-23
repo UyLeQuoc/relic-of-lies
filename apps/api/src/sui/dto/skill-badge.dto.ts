@@ -3,22 +3,22 @@ import { Field, ObjectType } from "@nestjs/graphql"
 @ObjectType()
 export class SkillBadgeDto {
     @Field(() => String)
-    id: string
+        id: string
 
     @Field(() => String)
-    userId: string
+        userId: string
 
     @Field(() => String)
-    verifierId: string
+        verifierId: string
 
     @Field(() => String)
-    skillName: string
+        skillName: string
 
     @Field(() => String)
-    suiObjectId: string
+        suiObjectId: string
 
     @Field(() => Date)
-    mintedAt: Date
+        mintedAt: Date
 
     constructor(partial: Partial<SkillBadgeDto>) {
         Object.assign(this, partial)

@@ -6,6 +6,8 @@ import { join } from "path"
 
 import { EnvModule } from "./dynamic-modules"
 import { PrismaModule } from "./prisma"
+import { HelloWorldModule } from "./hello-world"
+import { SuiModule } from "./sui"
 
 @Module({
     imports: [
@@ -23,6 +25,8 @@ import { PrismaModule } from "./prisma"
             ],
             sortSchema: true,
         }),
+        HelloWorldModule,
+        SuiModule,
     ],
 })
 export class AppModule {}
