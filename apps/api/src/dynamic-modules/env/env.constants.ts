@@ -1,4 +1,4 @@
 export const LOCALHOST = "localhost"
 export const DEFAULT_PORT = 5000
 export const DEFAULT_DATABASE_URL =
-  "postgresql://goodsdesign_user:goodsdesign_password@localhost:5432/goodsdesign_db?schema=public"
+  "postgresql://relic-of-lies_user:relic-of-lies_password@localhost:5432/relic-of-lies_db?schema=public"
