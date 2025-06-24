@@ -4,7 +4,6 @@ import { getFullnodeUrl, SuiClient } from "@mysten/sui/client"
 import { Transaction } from "@mysten/sui/transactions"
 import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519"
 import { PrismaService } from "../prisma/prisma.service"
-import { SkillBadgeDto } from "./dto/skill-badge.dto"
 
 @Injectable()
 export class SuiService {
@@ -52,20 +51,5 @@ export class SuiService {
             console.error("Error minting skill badge:", error)
             throw error
         }
-    }
-
-    async getBadgesByWallet(wallet: string): Promise<SkillBadgeDto[]> {
-        const user = await this.prisma.user.findUnique({
-            where: { wallet },
-            include: {
-                skillBadges: true
-            }
-        })
-
-        if (!user) {
-            throw new Error(`User with wallet ${wallet} not found`)
-        }
-
-        return user.skillBadges.map(badge => new SkillBadgeDto(badge))
     }
 }
