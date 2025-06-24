@@ -2,29 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
-input GetBadgesByWalletInput {
-  wallet: String!
-}
-
 type Mutation {
   mintSkillBadge(recipient: String!, skillName: String!): String!
 }
 
 type Query {
-  getBadgesByWallet(input: GetBadgesByWalletInput!): [SkillBadgeDto!]!
   hello: String!
-}
-
-type SkillBadgeDto {
-  id: String!
-  mintedAt: DateTime!
-  skillName: String!
-  suiObjectId: String!
-  userId: String!
-  verifierId: String!
 }
