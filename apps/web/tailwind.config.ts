@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "god-of-war": ["God of War", "sans-serif"],
+        "god-of-war": ["var(--font-god-of-war)"],
+        "faith-collapsing": ["var(--font-faith-collapsing)"],
+        "helvetica": ["var(--font-helvetica)"],
       },
       animation: {
         marquee: "marquee var(--duration) linear infinite",

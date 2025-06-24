@@ -7,7 +7,9 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        Home Page
+        <h1 className="text-4xl font-god-of-war">God of War - 72px</h1>
+        <h1 className="text-4xl font-faith-collapsing">Faith Collapsing - 150px</h1>
+        <h1 className="text-4xl font-helvetica">Helvetica - 32px</h1>
       </main>
     </div>
   )

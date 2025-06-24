@@ -2,6 +2,22 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WrappedLayout from "./wrapped-layout";
 import { Toaster } from "@/components/ui/sonner";
+import localFont from 'next/font/local'
+
+const godOfWar = localFont({
+  src: "../../public/fonts/god-of-war.ttf",
+  variable: '--font-god-of-war'
+})
+
+const faithCollapsing = localFont({
+  src: "../../public/fonts/faith-collapsing.ttf",
+  variable: '--font-faith-collapsing'
+})
+
+const helvetica = localFont({
+  src: "../../public/fonts/helvetica.ttf",
+  variable: '--font-helvetica'
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${godOfWar.variable} ${faithCollapsing.variable} ${helvetica.variable} antialiased`}
       >
         <WrappedLayout>
           {children}
