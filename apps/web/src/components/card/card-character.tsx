@@ -58,13 +58,21 @@ export function CardCharacter({
 
         {/* Value, Name, Description dùng style từ constant và fontSize động */}
         <span
-          className={cn(cardConcept.valueStyle, "absolute z-20")}
+          className={cn(
+            cardConcept.valueStyle,
+            card.valueStyle,
+            "absolute z-20"
+          )}
           style={{ fontSize: `${h * (cardConcept.valueFontSize ?? 0.1)}px` }}
         >
           {card.value}
         </span>
         <h3
-          className={cn(cardConcept.nameStyle, "absolute z-20")}
+          className={cn(
+            cardConcept.nameStyle,
+            card.nameStyle,
+            "absolute z-20 truncate"
+          )}
           style={{ fontSize: `${h * (cardConcept.nameFontSize ?? 0.045)}px` }}
         >
           {card.name}
@@ -73,8 +81,8 @@ export function CardCharacter({
           <p
             className={cn(
               cardConcept.descriptionStyle,
-              card.style,
-              "absolute z-20"
+              card.descriptionStyle,
+              "absolute z-20 text-center left-1/2 -translate-x-1/2"
             )}
             style={{
               fontSize: `${h * (cardConcept.descriptionFontSize ?? 0.04)}px`,

@@ -1,22 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Header, CardCharacter } from "@/components";
-import { CardType, cardsMap, CardConceptType } from "@/constants/cards";
+import { cardsMap, CardConceptType, cardTypes } from "@/constants/cards";
 
 export default function CardPage() {
-  const cardTypes = [
-    CardType.Value0, // Scout
-    CardType.Value1, // Knight
-    CardType.Value2, // Healer
-    CardType.Value3, // Berserker
-    CardType.Value4, // Cleric Ward
-    CardType.Value5, // Wizard
-    CardType.Value6, // Tactician
-    CardType.Value7, // Paladin
-    CardType.Value8, // Cursed Idol
-    CardType.Value9, // Sacred Crystal
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
