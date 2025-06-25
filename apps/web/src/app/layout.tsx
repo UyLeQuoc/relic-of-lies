@@ -5,17 +5,17 @@ import { Toaster } from "@/components/ui/sonner";
 import localFont from 'next/font/local'
 
 const godOfWar = localFont({
-  src: "../../public/fonts/god-of-war.ttf",
+  src: "../../public/fonts/relic-of-lies/god-of-war.ttf",
   variable: '--font-god-of-war'
 })
 
 const faithCollapsing = localFont({
-  src: "../../public/fonts/faith-collapsing.ttf",
+  src: "../../public/fonts/relic-of-lies/faith-collapsing.ttf",
   variable: '--font-faith-collapsing'
 })
 
 const helvetica = localFont({
-  src: "../../public/fonts/helvetica.ttf",
+  src: "../../public/fonts/relic-of-lies/helvetica.ttf",
   variable: '--font-helvetica'
 })
 
