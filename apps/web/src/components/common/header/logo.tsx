@@ -23,7 +23,7 @@ export const Logo = ({
                     'hover:[mask-position:100%]'
                 )
                 }>
-                <Image src="/logo.png" alt="Relic  Logo" width={48} height={48} className="dark:invert" />
+                <Image src="/images/common/logo.png" alt="Relic Logo" width={48} height={48} className="" />
                 <span className={
                     'text-2xl font-bold'
                 }>Relic of Lies</span>
