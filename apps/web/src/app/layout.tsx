@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${godOfWar.variable} ${faithCollapsing.variable} ${helvetica.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${faithCollapsing.variable} ${helvetica.variable} ${godOfWar.variable} antialiased`}
       >
         <WrappedLayout>
           {children}
