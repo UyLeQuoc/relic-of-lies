@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import WrappedLayout from "./wrapped-layout";
-import { Toaster } from "@/components/ui/sonner";
 import localFont from 'next/font/local'
+import { Header, Toaster } from "@/components";
 
 const godOfWar = localFont({
   src: "../../../public/fonts/relic-of-lies/god-of-war.ttf",
@@ -39,7 +39,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${faithCollapsing.variable} ${helvetica.variable} ${godOfWar.variable} antialiased`}
       >
-        <WrappedLayout>
+        <WrappedLayout> 
+          <Header />
           {children}
           <Toaster />
         </WrappedLayout>
