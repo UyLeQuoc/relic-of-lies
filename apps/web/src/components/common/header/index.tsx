@@ -44,7 +44,9 @@ export const Header = () => {
           <div className='flex items-center gap-10'>
             <Logo />
             <nav className='flex items-center gap-5'>
-              <Link href="/explore">Explore</Link>
+              <Link href="/">Home</Link>
+              <Link href="/lobby">Lobby</Link>
+              <Link href="/docs">Docs</Link>
               {
                 currentWallet?.accounts[0]?.address && (
                   <>

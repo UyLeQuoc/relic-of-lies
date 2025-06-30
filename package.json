@@ -22,6 +22,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:fe": "cd apps/web && npm run dev",
     "setup": "npm install -f && cd apps/api && npm install -f && cd ../.. && cd apps/web && npm install -f",
     "setup:db": "cd setup && docker compose up -d",
     "dev:api": "cd apps/api && npm run start:dev",

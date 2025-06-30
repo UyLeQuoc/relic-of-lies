@@ -68,7 +68,7 @@ export const metadata: Metadata = {
       }>Relic of lies</span>
       </div>}
   
-      projectLink='https://github.com/relic-of-lies'
+      projectLink='https://github.com/UyLeQuoc/relic-of-lies'
     />
   )
   const footer = <Footer>MIT {new Date().getFullYear()} © Relic of lies.</Footer>
@@ -93,9 +93,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             banner={banner}
             navbar={navbar}
             pageMap={await getPageMap()}
-            docsRepositoryBase="https://github.com/relic-of-lies/tree/main"
+            docsRepositoryBase="https://github.com/UyLeQuoc/relic-of-lies/tree/main"
             sidebar={{ defaultMenuCollapseLevel: 1 }}
-            footer={footer}
             editLink="Edit this page on GitHub"
             toc={{
               backToTop: null,
